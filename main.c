@@ -37,18 +37,19 @@ int main(void)
 
 	if (WSAStartup(MAKEWORD(3,2), &wsa) != 0) {
 
-		printf("WSAStartup() failed.\n");
+		fprintf(logfile, "WSAStartup() failed.\n");
 		return 1;
 	}
 
-	if ((sniffer = socket(AF_INET, SOCK_RAW, IPPROTO_IP)) == INVALID_SOCKET) {
-		printf("Failed to create raw socket.\n");
+	if ((sniffer = socket(AF_INET, SOCK_RAW, IPPROTO_IGMP)) == INVALID_SOCKET) {
+		fprintf(logfile, "Socket: %d\n", sniffer);
+		fprintf(logfile, "Failed to create raw socket.\n");
 		return 1;
 	}
 
 
 
-
+	fprintf(logfile, "It worked! socket: %ldd\n", sniffer);
 
 
 
