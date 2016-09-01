@@ -1,4 +1,4 @@
 #!/bin/bash
 
 
-gcc -Wall -std=c99 -o sniffer sniffer.c main.c
+gcc -Wall -std=c99 -o sniffer sniffer.c main.c -lws2_32
