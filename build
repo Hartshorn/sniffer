@@ -1,4 +1,4 @@
 #!/bin/bash
 
 
-gcc -Wall -std=c99 -o sniffer sniffer.c main.c -lws2_32
+gcc -g -MMD -MP -MF -Wall -std=c99 -o out/sniffer src/sniffer.c src/main.c -lpacket -lwinpcap
